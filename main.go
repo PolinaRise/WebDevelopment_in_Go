@@ -90,17 +90,6 @@ func main() {
 		panic("usage go run main.go . [-f]")
 	}
 	path := os.Args[1]
-	/*fileInfo, err = os.Stat("")
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println("File name:", fileInfo.Name())
-	fmt.Println("Size in bytes:", fileInfo.Size())
-	fmt.Println("Permissions:", fileInfo.Mode())
-	fmt.Println("Last modified:", fileInfo.ModTime())
-	fmt.Println("Is Directory: ", fileInfo.IsDir())
-	fmt.Printf("System interface type: %T\n", fileInfo.Sys())
-	fmt.Printf("System info: %+v\n\n", fileInfo.Sys()) */
 	printFiles := len(os.Args) == 3 && os.Args[2] == "-f"
 	err := dirTree(out, path, printFiles)
 	if err != nil {
